@@ -23,14 +23,14 @@ def howmany(update, context):
 def help(update, context):
     logging.info(f'user: {update.message.chat.username} send command help')
     update.message.reply_text('''I can show you as many dogs as you want
-Insert /wantDog to see them
-Insert /WhereAreAllDogs to know where are all shiba-dogs
+Insert /wantdog to see them
+Insert /where to know where are all shiba-dogs
 Insert /start to know what i know''')
 
 def kuda(update, context):
     update.message.reply_text('I have them')
 
-def wantDog(update, context):
+def wantdog(update, context):
     s = update.message.text
     if s.isdigit() == False:
       update.message.reply_text('Insert only a number, please')
@@ -66,9 +66,9 @@ def main():
 
     dp.add_handler(CommandHandler("start", start))
     dp.add_handler(CommandHandler("help", help))
-    dp.add_handler(CommandHandler("WhereAreAllDogs", kuda))
+    dp.add_handler(CommandHandler("where", kuda))
     conv_handler = ConversationHandler(
-        entry_points=[CommandHandler('wantDog', howmany)],
+        entry_points=[CommandHandler('wantdog', howmany)],
 
         states={
             0: [MessageHandler(Filters.text, wantDog)],
