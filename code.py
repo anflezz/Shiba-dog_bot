@@ -34,6 +34,8 @@ def wantdog(update, context):
     s = update.message.text
     if s.isdigit() == False:
       update.message.reply_text('Insert only a number, please')
+    elif s == '0':
+      update.message.reply_text('Oh, absolutely no dogs, maybe you still want at least one?')
     else:
       y=f'http://shibe.online/api/shibes?count={s}&urls=true&httpsUrls=true'
       response = requests.get(y)
