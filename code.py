@@ -71,7 +71,7 @@ def main():
         entry_points=[CommandHandler('wantdog', howmany)],
 
         states={
-            0: [MessageHandler(Filters.text, wantDog)],
+            0: [MessageHandler(Filters.text, wantdog)],
         },
 
         fallbacks=[CommandHandler('cancel', cancel)]
