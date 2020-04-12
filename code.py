@@ -14,7 +14,8 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 logger = logging.getLogger(__name__)
 
 def start(update, context):
-    update.message.reply_text('I know a lot of dogs')
+    update.message.reply_text('''I know a lot of shiba-dogs
+Insert /help and I show you what I can''')
 
 def howmany(update, context):
     update.message.reply_text('How many dogs?')
